@@ -1,9 +1,10 @@
 package com.codingsy.ems.service.impl;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.codingsy.ems.dto.EmployeeDTO;
@@ -32,11 +33,15 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public List<EmployeeDTO> getAllEmployees() {
-        return employeeRepository.findAll()
-                .stream()
-                .map(EmployeeMapper::toDTO)
-                .collect(Collectors.toList());
+    public Page<EmployeeDTO> getAllEmployees(int page, int size, String sortBy) {
+    	Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
+    	
+//    	Spring Data JPA’s Page<T> is not a List, it’s a special wrapper that:
+//		✅ Already has a .map(Function<T, R> mapper) method.
+//		✅ Allows direct transformations without calling .stream().
+//    	It internally calls .stream().map() on the page content!
+//		PageImpl<>(getContent().stream().map(converter).toList(), getPageable(), getTotalElements());    	
+        return employeeRepository.findAll(pageable).map(EmployeeMapper::toDTO);
     }
 
     @Override

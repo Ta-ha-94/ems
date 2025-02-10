@@ -1,12 +1,12 @@
 package com.codingsy.ems.service;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
 
 import com.codingsy.ems.dto.EmployeeDTO;
 
 public interface EmployeeService {
 	EmployeeDTO saveEmployee(EmployeeDTO employeeDTO);
-    List<EmployeeDTO> getAllEmployees();
+    Page<EmployeeDTO> getAllEmployees(int page, int size, String sortBy);
     EmployeeDTO getEmployeeById(Long id);
     EmployeeDTO updateEmployee(Long id, EmployeeDTO employeeDTO);
     void deleteEmployee(Long id);
