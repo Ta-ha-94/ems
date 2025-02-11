@@ -1,10 +1,10 @@
 package com.codingsy.ems.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.codingsy.ems.dto.EmployeeDTO;
@@ -13,6 +13,7 @@ import com.codingsy.ems.mapper.EmployeeMapper;
 import com.codingsy.ems.model.Employee;
 import com.codingsy.ems.repository.EmployeeRepository;
 import com.codingsy.ems.service.EmployeeService;
+import com.codingsy.ems.specification.EmployeeSpecification;
 
 import jakarta.validation.Valid;
 	
@@ -21,7 +22,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 	
 	private final EmployeeRepository employeeRepository;
 	
-	@Autowired
 	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
 		this.employeeRepository = employeeRepository;
 	}
@@ -69,4 +69,14 @@ public class EmployeeServiceImpl implements EmployeeService{
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found with ID: " + id));
         employeeRepository.delete(existingEmployee);
     }
+
+	@Override
+	public Page<EmployeeDTO> filterEmployee(String name, Double minSalary, Double maxSalary, Pageable pageable) {
+		Specification<Employee> spec = Specification
+											.where(EmployeeSpecification.hasName(name))
+											.and(EmployeeSpecification.hasMinSalary(minSalary))
+											.and(EmployeeSpecification.hasMaxSalary(maxSalary));
+		
+		return employeeRepository.findAll(spec, pageable).map(EmployeeMapper::toDTO);
+	}
 }

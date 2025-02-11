@@ -2,10 +2,12 @@ package com.codingsy.ems.controller;
 
 import java.net.URI;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codingsy.ems.dto.EmployeeDTO;
-import com.codingsy.ems.model.Employee;
 import com.codingsy.ems.service.EmployeeService;
 
 import jakarta.validation.Valid;
@@ -65,5 +66,19 @@ public class EmployeeController {
         response.put("message", "Employee deleted successfully!");
 
         return ResponseEntity.ok().body(response);
+    }
+    
+    @GetMapping("/filter")
+    public ResponseEntity<Page<EmployeeDTO>> filterEmployee(
+    		@RequestParam(required = false) String name,
+    		@RequestParam(required = false) Double minSalary,
+    		@RequestParam(required = false) Double maxSalary,
+    		@RequestParam(defaultValue = "0") int page,
+    		@RequestParam(defaultValue = "5") int size,
+    		@RequestParam(defaultValue = "id") String sortBy
+    		){
+    	Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
+    	Page<EmployeeDTO> employees = employeeService.filterEmployee(name, minSalary, maxSalary, pageable);
+    	return ResponseEntity.ok(employees);
     }
 }

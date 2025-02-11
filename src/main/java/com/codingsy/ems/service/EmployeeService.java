@@ -1,6 +1,7 @@
 package com.codingsy.ems.service;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.codingsy.ems.dto.EmployeeDTO;
 
@@ -10,4 +11,5 @@ public interface EmployeeService {
     EmployeeDTO getEmployeeById(Long id);
     EmployeeDTO updateEmployee(Long id, EmployeeDTO employeeDTO);
     void deleteEmployee(Long id);
+    Page<EmployeeDTO> filterEmployee(String name, Double minSalary, Double maxSalary, Pageable pageable);
 }
