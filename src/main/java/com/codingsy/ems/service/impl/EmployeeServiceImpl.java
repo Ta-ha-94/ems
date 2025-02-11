@@ -1,5 +1,7 @@
 package com.codingsy.ems.service.impl;
 
+import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -88,5 +90,17 @@ public class EmployeeServiceImpl implements EmployeeService{
 		Employee employee = employeeRepository.findByIdAndActiveTrue(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Active employee not found with id: " + id));
 		return employee;
+	}
+
+	@Override
+	public EmployeeDTO restoreEmployee(Long id) {
+		Optional<Employee> employeeOptional = employeeRepository.findById(id);
+		Employee existingEmployee = employeeOptional.orElseThrow(() -> new ResourceNotFoundException("Employee not found"));
+		if(existingEmployee.isActive()) {
+			throw new IllegalStateException("Employee is already active");
+		}
+		existingEmployee.setActive(true);
+		Employee employee = employeeRepository.save(existingEmployee);
+		return EmployeeMapper.toDTO(employee);
 	}
 }

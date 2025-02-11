@@ -13,4 +13,5 @@ public interface EmployeeService {
     void deleteEmployee(Long id);
     Page<EmployeeDTO> filterEmployee(String name, Double minSalary, Double maxSalary, Pageable pageable);
     Page<EmployeeDTO> getAllActiveEmployees(int page, int size, String sortBy);
+    EmployeeDTO restoreEmployee(Long id);
 }

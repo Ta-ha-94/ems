@@ -81,4 +81,9 @@ public class EmployeeController {
     	Page<EmployeeDTO> employees = employeeService.filterEmployee(name, minSalary, maxSalary, pageable);
     	return ResponseEntity.ok(employees);
     }
+    
+    @PutMapping("/{id}/restore")
+    public ResponseEntity<EmployeeDTO> restoreEmployee(@PathVariable Long id){
+    	return ResponseEntity.ok(employeeService.restoreEmployee(id));
+    }
 }
