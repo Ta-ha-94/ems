@@ -46,15 +46,13 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public EmployeeDTO getEmployeeById(Long id) {
-        Employee employee = employeeRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with ID: " + id));
+        Employee employee = getEmployeeByIdUtil(id);
         return EmployeeMapper.toDTO(employee);
     }
 
     @Override
     public EmployeeDTO updateEmployee(Long id, @Valid EmployeeDTO employeeDTO) {
-        Employee existingEmployee = employeeRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with ID: " + id));
+        Employee existingEmployee = getEmployeeByIdUtil(id);
 
         existingEmployee.setName(employeeDTO.getName());
         existingEmployee.setEmail(employeeDTO.getEmail());
@@ -65,9 +63,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public void deleteEmployee(Long id) {
-        Employee existingEmployee = employeeRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with ID: " + id));
-        employeeRepository.delete(existingEmployee);
+        Employee existingEmployee = getEmployeeByIdUtil(id);
+        existingEmployee.setActive(false);
+        employeeRepository.save(existingEmployee);
     }
 
 	@Override
@@ -78,5 +76,17 @@ public class EmployeeServiceImpl implements EmployeeService{
 											.and(EmployeeSpecification.hasMaxSalary(maxSalary));
 		
 		return employeeRepository.findAll(spec, pageable).map(EmployeeMapper::toDTO);
+	}
+
+	@Override
+	public Page<EmployeeDTO> getAllActiveEmployees(int page, int size, String sortBy) {
+		Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
+		return employeeRepository.findAllActive(pageable).map(EmployeeMapper::toDTO);
+	}
+	
+	private Employee getEmployeeByIdUtil(Long id) {
+		Employee employee = employeeRepository.findByIdAndActiveTrue(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Active employee not found with id: " + id));
+		return employee;
 	}
 }

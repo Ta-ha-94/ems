@@ -18,7 +18,8 @@ public class EmployeeMapper {
                 dto.getId(),
                 dto.getName(),
                 dto.getEmail(),
-                dto.getSalary()
+                dto.getSalary(),
+                true
         );
     }
 }

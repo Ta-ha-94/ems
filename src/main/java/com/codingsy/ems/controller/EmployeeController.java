@@ -46,7 +46,7 @@ public class EmployeeController {
     		@RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(defaultValue = "id") String sortBy) {
-        return ResponseEntity.ok(employeeService.getAllEmployees(page, size, sortBy));
+        return ResponseEntity.ok(employeeService.getAllActiveEmployees(page, size, sortBy));
     }
 
     @GetMapping("/{id}")

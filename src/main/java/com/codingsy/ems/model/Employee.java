@@ -15,32 +15,33 @@ import jakarta.validation.constraints.NotNull;
 @Table(name = "employee")
 public class Employee {
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @NotBlank(message = "Name is required")
-    private String name;
+	@NotBlank(message = "Name is required")
+	private String name;
 
-    @Email(message = "Invalid email format")
-    @Column(unique = true)
-    private String email;
+	@Email(message = "Invalid email format")
+	@Column(unique = true)
+	private String email;
 
-    @NotNull(message = "Salary must not be null")
-    @Min(value = 10000, message = "Salary must be at least 10,000")
-    private Double salary;
-    
-    public Employee() {
+	@NotNull(message = "Salary must not be null")
+	@Min(value = 10000, message = "Salary must be at least 10,000")
+	private Double salary;
+
+	@Column(nullable = false)
+	private boolean active = true; // ✅ New field for soft delete
+
+	public Employee() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Employee(Long id, @NotBlank(message = "Name is required") String name,
-			@Email(message = "Invalid email format") String email,
-			@NotNull(message = "Salary must not be null") @Min(value = 10000, message = "Salary must be at least 10,000") Double salary) {
-		super();
+	public Employee(Long id, String name, String email, Double salary, boolean active) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.salary = salary;
+		this.active = active;
 	}
 
 	public Long getId() {
@@ -75,10 +76,18 @@ public class Employee {
 		this.salary = salary;
 	}
 
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", email=" + email + ", salary=" + salary + "]";
+		return "Employee [id=" + id + ", name=" + name + ", email=" + email + ", salary=" + salary + ", active="
+				+ active + "]";
 	}
-    
-    
+
 }
