@@ -8,11 +8,13 @@ import java.util.regex.Pattern;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.password.CompromisedPasswordException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -20,6 +22,13 @@ public class GlobalExceptionHandler {
 	// ✅ Handles "Resource Not Found" Errors
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<Map<String, String>> handleNotFound(ResourceNotFoundException ex) {
+        Map<String, String> response = new HashMap<>();
+        response.put("error", ex.getMessage());
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+    
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<Map<String, String>> handleNoResourceFoundException(NoResourceFoundException ex) {
         Map<String, String> response = new HashMap<>();
         response.put("error", ex.getMessage());
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
@@ -59,6 +68,13 @@ public class GlobalExceptionHandler {
         response.put("error", extractDuplicateValue(ex.getMostSpecificCause().getMessage()));
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
+    
+    @ExceptionHandler(CompromisedPasswordException.class)
+    public ResponseEntity<Map<String, String>> handleCompromisedPasswordException(CompromisedPasswordException ex) {
+    	Map<String, String> response = new HashMap<>();
+    	response.put("error", ex.getMessage());
+    	return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+    }
 
     // 🔍 Extract the duplicate entry value from the SQL error message
     private String extractDuplicateValue(String message) {
@@ -72,11 +88,11 @@ public class GlobalExceptionHandler {
         return "Duplicate entry found";
     }
     
- // ✅ Handles Any Other Unexpected Exception (Generic Handler)
-//    @ExceptionHandler(Exception.class)
-//    public ResponseEntity<Map<String, String>> handleGlobalException(Exception ex) {
-//        Map<String, String> response = new HashMap<>();
-//        response.put("error", "An unexpected error occurred: " + ex.getMessage());
-//        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-//    }
+//  ✅ Handles Any Other Unexpected Exception (Generic Handler)
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, String>> handleGlobalException(Exception ex) {
+        Map<String, String> response = new HashMap<>();
+        response.put("error", "An unexpected error occurred: " + ex.getMessage());
+        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
