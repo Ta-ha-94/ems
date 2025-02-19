@@ -1,34 +1,50 @@
-//package com.codingsy.ems.controller;
-//
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
-//import org.springframework.web.bind.annotation.RestController;
-//
-//import com.codingsy.ems.model.User;
-//import com.codingsy.ems.service.impl.AuthService;
+package com.codingsy.ems.controller;
 
-//@RestController
-//@RequestMapping("/auto")
-//public class AuthController {
-//	private final AuthService authService;
-//	
-//	public AuthController(AuthService authService) {
-//		this.authService = authService;
-//	}
-//	
+import java.net.URI;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.codingsy.ems.dto.UserDTO;
+import com.codingsy.ems.service.impl.AuthService;
+
+@RestController
+@RequestMapping("/auth")
+public class AuthController {
+	private final AuthService authService;
+
+	public AuthController(AuthService authService) {
+		this.authService = authService;
+	}
+
 //	Allows user registration
-//	@PostMapping("/register")
-//	public ResponseEntity<String> registerUser(@RequestBody User user) {
-//		return ResponseEntity.ok(authService.register(user));
-//	}
+	@PostMapping("/register")
+	public ResponseEntity<String> registerUser(@RequestBody UserDTO userDTO) {
+		String registerd = authService.register(userDTO);
+		URI location = URI.create("");
+		return ResponseEntity.created(location).body(registerd);
+	}
 //	 Authenticates users & returns JWT
-//	@PostMapping("/login")
-//	public ResponseEntity<String> loginUser(@RequestParam String username, @RequestParam String password) {
-//		return ResponseEntity.ok(authService.authenticate(username, password));
-//	}
-//	
-//}
-//
+
+	@PostMapping("/login")
+	public ResponseEntity<String> loginUser(Authentication authentication) {
+		return ResponseEntity.ok("User logged in with username: " + authentication.getName());
+	}
+	
+	 @PostMapping("/logout")
+    public ResponseEntity<String> logout() {
+        // In a stateless JWT setup, the client handles JWT removal.
+        return ResponseEntity.ok("Logout successful");
+    }
+
+	@GetMapping("/invalidSession")
+	public ResponseEntity<String> invalidSession() {
+		return ResponseEntity.ok("Session invalidated.");
+	}
+
+}

@@ -1,12 +1,9 @@
 package com.codingsy.ems.security.config;
 
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.password.CompromisedPasswordChecker;
-import org.springframework.security.authorization.AuthorizationEventPublisher;
-import org.springframework.security.authorization.SpringAuthorizationEventPublisher;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
 import org.springframework.security.config.annotation.web.configurers.ChannelSecurityConfigurer;
@@ -25,24 +22,13 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 import com.codingsy.ems.security.config.customizer.DefaultCustomizer;
 import com.codingsy.ems.security.filter.CsrfCookieFilter;
-import com.codingsy.ems.security.filter.JwtGeneratorFilter;
-import com.codingsy.ems.security.filter.JwtValidationFilter;
 
 import lombok.RequiredArgsConstructor;
 
-
-/**
- * 	Defines custom security rules to be applied to the incoming requests. 
- * 	Specifies which type of authentication should be performed, http-based or form-based.
- * 	Specifies custom login/logout forms.
- * 	Max sessions for a user is 3 in other environments
- * 	New login will invalidate the new session and prevents login
- * 	The /invlidSession page will be shown
- */
+@Profile(value = "prod")
 @Configuration
-@Profile(value = "!prod")
 @RequiredArgsConstructor
-public class SecurityConfig {
+public class SecurityProdConfig {
 	
 	private final DefaultCustomizer<CorsConfigurer<HttpSecurity>> corsConfigCustomizer;
     private final DefaultCustomizer<SessionManagementConfigurer<HttpSecurity>> sessionManagementConfigCustomizer;
@@ -52,10 +38,17 @@ public class SecurityConfig {
     private final DefaultCustomizer<ChannelSecurityConfigurer<HttpSecurity>.ChannelRequestMatcherRegistry> channelSecurityConfigCustomizer;
     private final DefaultCustomizer<FormLoginConfigurer<HttpSecurity>> formLoginConfigCustomizer;
     private final DefaultCustomizer<HttpBasicConfigurer<HttpSecurity>> httpBasicConfigCustomizer;
-    private final DefaultCustomizer<ExceptionHandlingConfigurer<HttpSecurity>> exceptionHandlingConfigCustomizer;	
+    private final DefaultCustomizer<ExceptionHandlingConfigurer<HttpSecurity>> exceptionHandlingConfigCustomizer;
 	
+//	Defines custom security rules to be applied to the incoming requests. 
+//	Specifies which type of authentication should be performed, http-based or form-based.
+//	Specifies custom login/logout forms.
 	@Bean
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+//		Max sessions for a user is 1 in Prod
+//		New login will invalidate the new session and prevents login
+//		The /invlidSession page will be shown
+		
 		http
 	        .securityContext(securityContextConfigCustomizer.customize())
 	    	.requiresChannel(channelSecurityConfigCustomizer.customize()) //Only HTTPS requests are allowed
@@ -63,15 +56,12 @@ public class SecurityConfig {
 	    	.cors(corsConfigCustomizer.customize())
 	        .csrf(csrfConfigCustomizer.customize())
 	        .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
-	        .addFilterAfter(new JwtGeneratorFilter(), BasicAuthenticationFilter.class)
-            .addFilterBefore(new JwtValidationFilter(), BasicAuthenticationFilter.class)
 	        .authorizeHttpRequests(authorizeHttpRequestsConfigCustomizer.customize())
 	        .formLogin(formLoginConfigCustomizer.customize())
 	        .httpBasic(httpBasicConfigCustomizer.customize())
 	        .exceptionHandling(exceptionHandlingConfigCustomizer.customize());
 	    return http.build();
     }
-	
 	
 	@Bean
 	public PasswordEncoder passwordEncoder() {

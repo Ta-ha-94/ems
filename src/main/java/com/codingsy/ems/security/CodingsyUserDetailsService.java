@@ -28,9 +28,8 @@ public class CodingsyUserDetailsService implements UserDetailsService {
 									.orElseThrow(() -> new UsernameNotFoundException("User details not found for the user: " + username));
 		List<GrantedAuthority> authorities = new ArrayList<>();
 		
-		user.getRoles().forEach(role -> authorities.add(new SimpleGrantedAuthority(role.toString())));
+		user.getRoles().forEach(role -> authorities.add(new SimpleGrantedAuthority("ROLE_" + role.toString())));
 
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
 	}
-
 }
