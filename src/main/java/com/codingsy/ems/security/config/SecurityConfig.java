@@ -62,7 +62,7 @@ public class SecurityConfig {
 	    	.sessionManagement(sessionManagementConfigCustomizer.customize())
 	    	.cors(corsConfigCustomizer.customize())
 	        .csrf(csrfConfigCustomizer.customize())
-	        .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
+//	        .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
 	        .addFilterAfter(new JwtGeneratorFilter(), BasicAuthenticationFilter.class)
             .addFilterBefore(new JwtValidationFilter(), BasicAuthenticationFilter.class)
 	        .authorizeHttpRequests(authorizeHttpRequestsConfigCustomizer.customize())
