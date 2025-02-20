@@ -12,15 +12,14 @@ import com.codingsy.ems.mapper.UserMapper;
 import com.codingsy.ems.model.User;
 import com.codingsy.ems.repository.UserRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class AuthService {
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
-	
-	public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
-		this.userRepository = userRepository;
-		this.passwordEncoder = passwordEncoder;
-	}
+	private final AuditLogService auditLogService;
 	
 //	Encrypts passwords before saving users.
 	public String register(UserDTO userDTO) {
@@ -39,6 +38,7 @@ public class AuthService {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		
 		userRepository.save(user);
+		auditLogService.logAction(user.getUsername(), "USER_REGISTERED", "A new user has been been registered with username: " + user.getUsername() + " and roles: " + user.getRoles());
 		return "User with username:" + user.getUsername() + " is registered successfully!";
 	}
 

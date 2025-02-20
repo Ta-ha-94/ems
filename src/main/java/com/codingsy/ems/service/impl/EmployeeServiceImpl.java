@@ -30,6 +30,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	
 	private final EmployeeRepository employeeRepository;
 	private final EmailService mailService;
+	private final AuditLogService auditLogService;
 
 	@Transactional
 	@PreAuthorize(value = "hasRole('ADMIN')")
@@ -40,6 +41,8 @@ public class EmployeeServiceImpl implements EmployeeService{
         
         log.info("Employee with ID {} saved", savedEmployee.getId());
         log.info("Sending welcome email to employee with ID {}", savedEmployee.getId());
+        
+        auditLogService.logAction(savedEmployee.getName(), "EMPLOYEE_CREATED", "Created employee ID: " + savedEmployee.getId());
         
         mailService.sendEmail(savedEmployee.getEmail(), savedEmployee.getName());// Send email asynchronously
         
@@ -76,6 +79,9 @@ public class EmployeeServiceImpl implements EmployeeService{
         existingEmployee.setSalary(employeeDTO.getSalary());
 
         log.info("Employee with ID {} updated", id);
+        
+        auditLogService.logAction(existingEmployee.getName(), "EMPLOYEE_UPDATED", "Updated employee ID: " + existingEmployee.getId());
+        
         return EmployeeMapper.toDTO(employeeRepository.save(existingEmployee));
     }
 
@@ -87,6 +93,8 @@ public class EmployeeServiceImpl implements EmployeeService{
         existingEmployee.setActive(false);
         employeeRepository.save(existingEmployee);
         log.info("Employee with ID {} deactivated", id);
+        
+        auditLogService.logAction(existingEmployee.getName(), "EMPLOYEE_DELETED", "Deleted employee ID: " + existingEmployee.getId());
     }
 
 	@PreAuthorize(value = "hasAnyRole('ADMIN', 'EMPLOYEE')")
@@ -126,6 +134,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 		existingEmployee.setActive(true);
 		Employee employee = employeeRepository.save(existingEmployee);
 		log.info("Employee with ID {} restored", id);
+		
+		auditLogService.logAction(existingEmployee.getName(), "EMPLOYEE_RESTORED", "Restored employee ID: " + existingEmployee.getId());
+		
 		return EmployeeMapper.toDTO(employee);
 	}
 }
