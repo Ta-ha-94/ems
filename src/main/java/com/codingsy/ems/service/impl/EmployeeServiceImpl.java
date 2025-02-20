@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,6 +32,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	private final EmailService mailService;
 
 	@Transactional
+	@PreAuthorize(value = "hasRole('ADMIN')")
 	@Override
 	public EmployeeDTO saveEmployee(@Valid EmployeeDTO employeeDTO) {
         Employee employee = EmployeeMapper.toEntity(employeeDTO);
@@ -44,6 +46,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         return savedEmployee;
     }
 
+	@PreAuthorize(value = "hasAnyRole('ADMIN', 'EMPLOYEE')")
     @Override
     public Page<EmployeeDTO> getAllEmployees(int page, int size, String sortBy) {
     	Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
@@ -56,11 +59,13 @@ public class EmployeeServiceImpl implements EmployeeService{
         return employeeRepository.findAll(pageable).map(EmployeeMapper::toDTO);
     }
 
+	@PreAuthorize(value = "hasAnyRole('ADMIN', 'EMPLOYEE')")
     @Override
     public EmployeeDTO getEmployeeById(Long id) {
         return EmployeeMapper.toDTO(getEmployeeByIdUtil(id));
     }
 
+	@PreAuthorize(value = "hasRole('ADMIN')")
     @Transactional
     @Override
     public EmployeeDTO updateEmployee(Long id, @Valid EmployeeDTO employeeDTO) {
@@ -74,6 +79,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         return EmployeeMapper.toDTO(employeeRepository.save(existingEmployee));
     }
 
+	@PreAuthorize(value = "hasRole('ADMIN')")
     @Transactional
     @Override
     public void deleteEmployee(Long id) {
@@ -83,6 +89,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         log.info("Employee with ID {} deactivated", id);
     }
 
+	@PreAuthorize(value = "hasAnyRole('ADMIN', 'EMPLOYEE')")
 	@Override
 	public Page<EmployeeDTO> filterEmployee(String name, Double minSalary, Double maxSalary, Pageable pageable) {
 		Specification<Employee> spec = Specification
@@ -93,6 +100,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return employeeRepository.findAll(spec, pageable).map(EmployeeMapper::toDTO);
 	}
 
+	@PreAuthorize(value = "hasAnyRole('ADMIN', 'EMPLOYEE')")
 	@Override
 	public Page<EmployeeDTO> getAllActiveEmployees(int page, int size, String sortBy) {
 		Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
@@ -106,6 +114,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return employee;
 	}
 
+	@PreAuthorize(value = "hasRole('ADMIN')")
 	@Transactional
 	@Override
 	public EmployeeDTO restoreEmployee(Long id) {

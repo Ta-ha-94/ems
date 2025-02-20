@@ -1,12 +1,9 @@
 package com.codingsy.ems.security.config;
 
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.authentication.password.CompromisedPasswordChecker;
-import org.springframework.security.authorization.AuthorizationEventPublisher;
-import org.springframework.security.authorization.SpringAuthorizationEventPublisher;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
 import org.springframework.security.config.annotation.web.configurers.ChannelSecurityConfigurer;
@@ -24,7 +21,6 @@ import org.springframework.security.web.authentication.password.HaveIBeenPwnedRe
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 import com.codingsy.ems.security.config.customizer.DefaultCustomizer;
-import com.codingsy.ems.security.filter.CsrfCookieFilter;
 import com.codingsy.ems.security.filter.JwtGeneratorFilter;
 import com.codingsy.ems.security.filter.JwtValidationFilter;
 

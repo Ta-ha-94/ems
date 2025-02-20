@@ -33,9 +33,9 @@ public class EmailService {
             return;
         }
 
-        log.info("to: {}", to);
-        log.info("subject: {}", subject);
-        log.info("htmlContent: {}", htmlContent);
+//        log.info("to: {}", to);
+//        log.info("subject: {}", subject);
+//        log.info("htmlContent: {}", htmlContent);
 		
         Map<String, String> request = new HashMap<>();
         request.put("to", to);
