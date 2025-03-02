@@ -1,0 +1,84 @@
+\doxysection{com.\+codingsy.\+ems.\+security.\+Codingsy\+User\+Details\+Service Class Reference}
+\hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_details_service}{}\label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_details_service}\index{com.codingsy.ems.security.CodingsyUserDetailsService@{com.codingsy.ems.security.CodingsyUserDetailsService}}
+Inheritance diagram for com.\+codingsy.\+ems.\+security.\+Codingsy\+User\+Details\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_details_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_details_service_a8218e16894d5fb57af07fe94e9ccb84f}{Codingsy\+User\+Details\+Service}} (\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1repository_1_1_user_repository}{User\+Repository}} user\+Repository)
+\item 
+User\+Details \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_details_service_ac220a03ce322bd738ced820bd59fe99b}{load\+User\+By\+Username}} (String username)  throws Username\+Not\+Found\+Exception 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Custom implementation of Spring Security\textquotesingle{}s {\ttfamily \doxylink{}{User\+Details\+Service}} to load user-\/specific data. This service retrieves user details from the database and constructs a {\ttfamily \doxylink{}{User\+Details}} object for authentication and authorization purposes.
+
+It uses the {\ttfamily \doxylink{interfacecom_1_1codingsy_1_1ems_1_1repository_1_1_user_repository}{User\+Repository}} to fetch user details and maps the user\textquotesingle{}s roles to Spring Security\textquotesingle{}s {\ttfamily \doxylink{}{Granted\+Authority}} for role-\/based access control.
+
+\begin{DoxyAuthor}{Author}
+Taha 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+User\+Details\+Service 
+
+\doxylink{interfacecom_1_1codingsy_1_1ems_1_1repository_1_1_user_repository}{User\+Repository} 
+
+User\+Details 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_details_service_a8218e16894d5fb57af07fe94e9ccb84f}\index{com.codingsy.ems.security.CodingsyUserDetailsService@{com.codingsy.ems.security.CodingsyUserDetailsService}!CodingsyUserDetailsService@{CodingsyUserDetailsService}}
+\index{CodingsyUserDetailsService@{CodingsyUserDetailsService}!com.codingsy.ems.security.CodingsyUserDetailsService@{com.codingsy.ems.security.CodingsyUserDetailsService}}
+\doxysubsubsection{\texorpdfstring{CodingsyUserDetailsService()}{CodingsyUserDetailsService()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_details_service_a8218e16894d5fb57af07fe94e9ccb84f} 
+com.\+codingsy.\+ems.\+security.\+Codingsy\+User\+Details\+Service.\+Codingsy\+User\+Details\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1repository_1_1_user_repository}{User\+Repository}}}]{user\+Repository}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a new {\ttfamily Codingsy\+User\+Details\+Service} with the specified {\ttfamily \doxylink{interfacecom_1_1codingsy_1_1ems_1_1repository_1_1_user_repository}{User\+Repository}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Repository} & the repository used to fetch user details from the database. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_details_service_ac220a03ce322bd738ced820bd59fe99b}\index{com.codingsy.ems.security.CodingsyUserDetailsService@{com.codingsy.ems.security.CodingsyUserDetailsService}!loadUserByUsername@{loadUserByUsername}}
+\index{loadUserByUsername@{loadUserByUsername}!com.codingsy.ems.security.CodingsyUserDetailsService@{com.codingsy.ems.security.CodingsyUserDetailsService}}
+\doxysubsubsection{\texorpdfstring{loadUserByUsername()}{loadUserByUsername()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_details_service_ac220a03ce322bd738ced820bd59fe99b} 
+User\+Details com.\+codingsy.\+ems.\+security.\+Codingsy\+User\+Details\+Service.\+load\+User\+By\+Username (\begin{DoxyParamCaption}\item[{String}]{username}{}\end{DoxyParamCaption}) throws Username\+Not\+Found\+Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+Loads the user details by username for authentication and authorization.
+
+This method retrieves the user from the database using the provided username. If the user is not found, it throws a {\ttfamily \doxylink{}{Username\+Not\+Found\+Exception}}.
+
+The user\textquotesingle{}s roles are mapped to Spring Security\textquotesingle{}s {\ttfamily \doxylink{}{Granted\+Authority}} objects and included in the returned {\ttfamily \doxylink{}{User\+Details}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the username of the user to be loaded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a {\ttfamily \doxylink{}{User\+Details}} object containing the user\textquotesingle{}s details and authorities. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Username\+Not\+Found\+Exception} & if the user with the specified username is not found. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/codingsy/ems/security/Codingsy\+User\+Details\+Service.\+java\end{DoxyCompactItemize}

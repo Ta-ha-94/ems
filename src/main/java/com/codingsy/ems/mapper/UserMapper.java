@@ -1,8 +1,11 @@
 package com.codingsy.ems.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.codingsy.ems.dto.UserDTO;
 import com.codingsy.ems.model.User;
 
+@Component
 public class UserMapper {
 	
 	public static User toUserModel(UserDTO userDTO) {

@@ -5,6 +5,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.ResponseEntity;
@@ -12,18 +14,22 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
 @Service
-@RequiredArgsConstructor
-@Slf4j
 public class EmailService {
+	
+	private static final Logger log = LoggerFactory.getLogger(EmailService.class);
+	
 	private final RestTemplate restTemplate;
 	private final ResourceLoader resourceLoader;
     private final String mailSenderApiUrl = "http://localhost:8899/api/v1/email/send"; // Replace with actual URL
 
-    @Async
+    public EmailService(RestTemplate restTemplate, ResourceLoader resourceLoader) {
+		super();
+		this.restTemplate = restTemplate;
+		this.resourceLoader = resourceLoader;
+	}
+
+	@Async
     public void sendEmail(String to, String name) {
     	String subject = "Welcome!";
         String htmlContent = loadTemplate("templates/welcome-email.html", Map.of("name", name));

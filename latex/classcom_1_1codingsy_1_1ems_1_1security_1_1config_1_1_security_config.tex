@@ -1,0 +1,110 @@
+\doxysection{com.\+codingsy.\+ems.\+security.\+config.\+Security\+Config Class Reference}
+\hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config}{}\label{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config}\index{com.codingsy.ems.security.config.SecurityConfig@{com.codingsy.ems.security.config.SecurityConfig}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_adb6daf907b79bad74aa3fb8cfae5de17}{Security\+Config}} (\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Cors\+Configurer$<$ Http\+Security $>$ $>$ cors\+Config\+Customizer, \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Session\+Management\+Configurer$<$ Http\+Security $>$ $>$ session\+Management\+Config\+Customizer, \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Csrf\+Configurer$<$ Http\+Security $>$ $>$ csrf\+Config\+Customizer, \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Authorize\+Http\+Requests\+Configurer$<$ Http\+Security $>$.Authorization\+Manager\+Request\+Matcher\+Registry $>$ authorize\+Http\+Requests\+Config\+Customizer, \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Security\+Context\+Configurer$<$ Http\+Security $>$ $>$ security\+Context\+Config\+Customizer, \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Channel\+Security\+Configurer$<$ Http\+Security $>$.Channel\+Request\+Matcher\+Registry $>$ channel\+Security\+Config\+Customizer, \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Form\+Login\+Configurer$<$ Http\+Security $>$ $>$ form\+Login\+Config\+Customizer, \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Http\+Basic\+Configurer$<$ Http\+Security $>$ $>$ http\+Basic\+Config\+Customizer, \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Exception\+Handling\+Configurer$<$ Http\+Security $>$ $>$ exception\+Handling\+Config\+Customizer)
+\item 
+Security\+Filter\+Chain \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_a849313eb4df617851603e3dad52b2a0a}{default\+Security\+Filter\+Chain}} (Http\+Security http)  throws Exception 
+\item 
+Password\+Encoder \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_ab3c76ff6218da12b4d36b5e1f4b67950}{password\+Encoder}} ()
+\item 
+Compromised\+Password\+Checker \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_a6ef87fe5456de2fbc2587075858273cf}{compromised\+Password\+Checker}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configures custom security rules for incoming requests in non-\/production environments. This class defines the security behavior for the application, including authentication mechanisms, session management, CORS, CSRF, and exception handling. It also integrates JWT-\/based authentication filters for token generation and validation.
+
+This configuration is applied only when the "{}prod"{} profile is not active.
+
+\begin{DoxySeeAlso}{See also}
+Security\+Filter\+Chain 
+
+Password\+Encoder 
+
+Compromised\+Password\+Checker 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_adb6daf907b79bad74aa3fb8cfae5de17}\index{com.codingsy.ems.security.config.SecurityConfig@{com.codingsy.ems.security.config.SecurityConfig}!SecurityConfig@{SecurityConfig}}
+\index{SecurityConfig@{SecurityConfig}!com.codingsy.ems.security.config.SecurityConfig@{com.codingsy.ems.security.config.SecurityConfig}}
+\doxysubsubsection{\texorpdfstring{SecurityConfig()}{SecurityConfig()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_adb6daf907b79bad74aa3fb8cfae5de17} 
+com.\+codingsy.\+ems.\+security.\+config.\+Security\+Config.\+Security\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Cors\+Configurer$<$ Http\+Security $>$ $>$}]{cors\+Config\+Customizer}{, }\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Session\+Management\+Configurer$<$ Http\+Security $>$ $>$}]{session\+Management\+Config\+Customizer}{, }\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Csrf\+Configurer$<$ Http\+Security $>$ $>$}]{csrf\+Config\+Customizer}{, }\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Authorize\+Http\+Requests\+Configurer$<$ Http\+Security $>$.Authorization\+Manager\+Request\+Matcher\+Registry $>$}]{authorize\+Http\+Requests\+Config\+Customizer}{, }\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Security\+Context\+Configurer$<$ Http\+Security $>$ $>$}]{security\+Context\+Config\+Customizer}{, }\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Channel\+Security\+Configurer$<$ Http\+Security $>$.Channel\+Request\+Matcher\+Registry $>$}]{channel\+Security\+Config\+Customizer}{, }\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Form\+Login\+Configurer$<$ Http\+Security $>$ $>$}]{form\+Login\+Config\+Customizer}{, }\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Http\+Basic\+Configurer$<$ Http\+Security $>$ $>$}]{http\+Basic\+Config\+Customizer}{, }\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1security_1_1config_1_1customizer_1_1_default_customizer}{Default\+Customizer}}$<$ Exception\+Handling\+Configurer$<$ Http\+Security $>$ $>$}]{exception\+Handling\+Config\+Customizer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a new {\ttfamily Security\+Config} with the provided customizers for various security configurations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cors\+Config\+Customizer} & Customizer for CORS configuration. \\
+\hline
+{\em session\+Management\+Config\+Customizer} & Customizer for session management configuration. \\
+\hline
+{\em csrf\+Config\+Customizer} & Customizer for CSRF configuration. \\
+\hline
+{\em authorize\+Http\+Requests\+Config\+Customizer} & Customizer for request authorization configuration. \\
+\hline
+{\em security\+Context\+Config\+Customizer} & Customizer for security context configuration. \\
+\hline
+{\em channel\+Security\+Config\+Customizer} & Customizer for channel security configuration. \\
+\hline
+{\em form\+Login\+Config\+Customizer} & Customizer for form-\/based login configuration. \\
+\hline
+{\em http\+Basic\+Config\+Customizer} & Customizer for HTTP Basic authentication configuration. \\
+\hline
+{\em exception\+Handling\+Config\+Customizer} & Customizer for exception handling configuration. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_a6ef87fe5456de2fbc2587075858273cf}\index{com.codingsy.ems.security.config.SecurityConfig@{com.codingsy.ems.security.config.SecurityConfig}!compromisedPasswordChecker@{compromisedPasswordChecker}}
+\index{compromisedPasswordChecker@{compromisedPasswordChecker}!com.codingsy.ems.security.config.SecurityConfig@{com.codingsy.ems.security.config.SecurityConfig}}
+\doxysubsubsection{\texorpdfstring{compromisedPasswordChecker()}{compromisedPasswordChecker()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_a6ef87fe5456de2fbc2587075858273cf} 
+Compromised\+Password\+Checker com.\+codingsy.\+ems.\+security.\+config.\+Security\+Config.\+compromised\+Password\+Checker (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Provides a password checker that verifies if a password has been compromised using the "{}\+Have I Been Pwned"{} REST API.
+
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{}{Compromised\+Password\+Checker}} instance. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_a849313eb4df617851603e3dad52b2a0a}\index{com.codingsy.ems.security.config.SecurityConfig@{com.codingsy.ems.security.config.SecurityConfig}!defaultSecurityFilterChain@{defaultSecurityFilterChain}}
+\index{defaultSecurityFilterChain@{defaultSecurityFilterChain}!com.codingsy.ems.security.config.SecurityConfig@{com.codingsy.ems.security.config.SecurityConfig}}
+\doxysubsubsection{\texorpdfstring{defaultSecurityFilterChain()}{defaultSecurityFilterChain()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_a849313eb4df617851603e3dad52b2a0a} 
+Security\+Filter\+Chain com.\+codingsy.\+ems.\+security.\+config.\+Security\+Config.\+default\+Security\+Filter\+Chain (\begin{DoxyParamCaption}\item[{Http\+Security}]{http}{}\end{DoxyParamCaption}) throws Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+Configures the default security filter chain for the application. This method sets up various security configurations, including CORS, CSRF, session management, request authorization, form-\/based login, HTTP Basic authentication, and exception handling. It also integrates JWT-\/based filters for token generation and validation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em http} & The {\ttfamily \doxylink{}{Http\+Security}} object used to configure the security filter chain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The configured {\ttfamily \doxylink{}{Security\+Filter\+Chain}}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If an error occurs during configuration. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_ab3c76ff6218da12b4d36b5e1f4b67950}\index{com.codingsy.ems.security.config.SecurityConfig@{com.codingsy.ems.security.config.SecurityConfig}!passwordEncoder@{passwordEncoder}}
+\index{passwordEncoder@{passwordEncoder}!com.codingsy.ems.security.config.SecurityConfig@{com.codingsy.ems.security.config.SecurityConfig}}
+\doxysubsubsection{\texorpdfstring{passwordEncoder()}{passwordEncoder()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1config_1_1_security_config_ab3c76ff6218da12b4d36b5e1f4b67950} 
+Password\+Encoder com.\+codingsy.\+ems.\+security.\+config.\+Security\+Config.\+password\+Encoder (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Provides a delegating password encoder that supports multiple encoding algorithms. This encoder is used to securely encode and verify user passwords.
+
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{}{Password\+Encoder}} instance. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/codingsy/ems/security/config/Security\+Config.\+java\end{DoxyCompactItemize}

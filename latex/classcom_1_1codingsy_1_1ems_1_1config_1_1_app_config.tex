@@ -1,0 +1,58 @@
+\doxysection{com.\+codingsy.\+ems.\+config.\+App\+Config Class Reference}
+\hypertarget{classcom_1_1codingsy_1_1ems_1_1config_1_1_app_config}{}\label{classcom_1_1codingsy_1_1ems_1_1config_1_1_app_config}\index{com.codingsy.ems.config.AppConfig@{com.codingsy.ems.config.AppConfig}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Rest\+Template \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1config_1_1_app_config_ae6c074704e3cc83fef4eca8f9f6d3bd3}{rest\+Template}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration class for the Codingsy Employee Management System (EMS) application, providing Spring beans for HTTP communication and other infrastructure components. 
+
+This class is annotated with {\ttfamily \doxylink{}{Configuration}} to indicate it defines bean definitions for the Spring application context. It is typically used to configure shared resources, such as REST clients, that can be injected into other components. 
+
+\begin{DoxyAuthor}{Author}
+Taha 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySeeAlso}{See also}
+Configuration 
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+1.\+0 
+\end{DoxySince}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1config_1_1_app_config_ae6c074704e3cc83fef4eca8f9f6d3bd3}\index{com.codingsy.ems.config.AppConfig@{com.codingsy.ems.config.AppConfig}!restTemplate@{restTemplate}}
+\index{restTemplate@{restTemplate}!com.codingsy.ems.config.AppConfig@{com.codingsy.ems.config.AppConfig}}
+\doxysubsubsection{\texorpdfstring{restTemplate()}{restTemplate()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1config_1_1_app_config_ae6c074704e3cc83fef4eca8f9f6d3bd3} 
+Rest\+Template com.\+codingsy.\+ems.\+config.\+App\+Config.\+rest\+Template (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates and registers a {\ttfamily \doxylink{}{Rest\+Template}} bean for HTTP communication. 
+
+This bean provides a simple, template-\/based approach to perform HTTP requests (e.\+g., GET, POST) to external services. It is suitable for RESTful service interactions within the EMS application, such as API calls to external systems. The default {\ttfamily \doxylink{}{Rest\+Template}} instance uses standard HTTP client settings, but can be customized for timeouts, proxies, or other configurations if needed. 
+
+Example usage in a service\+: 
+\begin{DoxyPre}
+\&\#64;Autowired
+private RestTemplate restTemplate;
+
+public String fetchData(String url) \{
+    return restTemplate.getForObject(url, String.class);
+\}
+\end{DoxyPre}
+ 
+
+\begin{DoxyReturn}{Returns}
+a new instance of {\ttfamily \doxylink{}{Rest\+Template}} configured for HTTP requests 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/codingsy/ems/config/App\+Config.\+java\end{DoxyCompactItemize}

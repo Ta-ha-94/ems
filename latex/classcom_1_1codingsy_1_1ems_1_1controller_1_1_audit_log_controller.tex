@@ -1,0 +1,100 @@
+\doxysection{com.\+codingsy.\+ems.\+controller.\+Audit\+Log\+Controller Class Reference}
+\hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller}{}\label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller}\index{com.codingsy.ems.controller.AuditLogController@{com.codingsy.ems.controller.AuditLogController}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller_ac2e8e1b81e2b8bca3236a856bb335b48}{Audit\+Log\+Controller}} (\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_audit_log_service}{Audit\+Log\+Service}} audit\+Log\+Service)
+\item 
+Response\+Entity$<$ Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller_a5fddddc348090607a4382fc0926fe63f}{get\+All\+Logs}} ( @Request\+Param(default\+Value="{}0"{}) int page, @Request\+Param(default\+Value="{}10"{}) int size, @Request\+Param(default\+Value="{}timestamp"{}) String sort\+By, @Request\+Param(default\+Value="{}desc"{}) String direction)
+\item 
+Response\+Entity$<$ Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller_a7f852b0b570fb578fec0a10b999a1c00}{filter\+Audit\+Log}} ( @Request\+Param(default\+Value="{}0"{}) int page, @Request\+Param(default\+Value="{}10"{}) int size, @Request\+Param(default\+Value="{}timestamp"{}) String sort\+By, @Request\+Param(default\+Value="{}desc"{}) String direction, @Request\+Param(required=false) String username, @Request\+Param(required=false) String action, @Request\+Param(required=false) Local\+Date start\+Date, @Request\+Param(required=false) Local\+Date end\+Date, @Request\+Param(required=false) Local\+Date date)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is a REST controller for managing audit logs. It provides end-\/points for retrieving and filtering audit logs. Access to these end-\/points is restricted to users with the \textquotesingle{}ADMIN\textquotesingle{} role.
+
+\begin{DoxyAuthor}{Author}
+Taha 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller_ac2e8e1b81e2b8bca3236a856bb335b48}\index{com.codingsy.ems.controller.AuditLogController@{com.codingsy.ems.controller.AuditLogController}!AuditLogController@{AuditLogController}}
+\index{AuditLogController@{AuditLogController}!com.codingsy.ems.controller.AuditLogController@{com.codingsy.ems.controller.AuditLogController}}
+\doxysubsubsection{\texorpdfstring{AuditLogController()}{AuditLogController()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller_ac2e8e1b81e2b8bca3236a856bb335b48} 
+com.\+codingsy.\+ems.\+controller.\+Audit\+Log\+Controller.\+Audit\+Log\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_audit_log_service}{Audit\+Log\+Service}}}]{audit\+Log\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a new \doxylink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller}{Audit\+Log\+Controller} with the specified \doxylink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_audit_log_service}{Audit\+Log\+Service}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em audit\+Log\+Service} & The service used to perform audit log-\/related operations. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller_a7f852b0b570fb578fec0a10b999a1c00}\index{com.codingsy.ems.controller.AuditLogController@{com.codingsy.ems.controller.AuditLogController}!filterAuditLog@{filterAuditLog}}
+\index{filterAuditLog@{filterAuditLog}!com.codingsy.ems.controller.AuditLogController@{com.codingsy.ems.controller.AuditLogController}}
+\doxysubsubsection{\texorpdfstring{filterAuditLog()}{filterAuditLog()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller_a7f852b0b570fb578fec0a10b999a1c00} 
+Response\+Entity$<$ Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ $>$ com.\+codingsy.\+ems.\+controller.\+Audit\+Log\+Controller.\+filter\+Audit\+Log (\begin{DoxyParamCaption}\item[{@Request\+Param(default\+Value="{}0"{}) int}]{page}{, }\item[{@Request\+Param(default\+Value="{}10"{}) int}]{size}{, }\item[{@Request\+Param(default\+Value="{}timestamp"{}) String}]{sort\+By}{, }\item[{@Request\+Param(default\+Value="{}desc"{}) String}]{direction}{, }\item[{@Request\+Param(required=false) String}]{username}{, }\item[{@Request\+Param(required=false) String}]{action}{, }\item[{@Request\+Param(required=false) Local\+Date}]{start\+Date}{, }\item[{@Request\+Param(required=false) Local\+Date}]{end\+Date}{, }\item[{@Request\+Param(required=false) Local\+Date}]{date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Filters audit logs based on various criteria such as username, action, date range, and specific date. The results are paginated and can be sorted by a specified field and direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & The page number (default is 0). \\
+\hline
+{\em size} & The number of logs per page (default is 10). \\
+\hline
+{\em sort\+By} & The field to sort by (default is "{}timestamp"{}). \\
+\hline
+{\em direction} & The sorting direction (default is "{}desc"{}). \\
+\hline
+{\em username} & The username to filter by (optional). \\
+\hline
+{\em action} & The action to filter by (optional). \\
+\hline
+{\em start\+Date} & The start date of the range to filter by (optional). \\
+\hline
+{\em end\+Date} & The end date of the range to filter by (optional). \\
+\hline
+{\em date} & The specific date to filter by (optional). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Response\+Entity containing a page of filtered \doxylink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log} objects. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller_a5fddddc348090607a4382fc0926fe63f}\index{com.codingsy.ems.controller.AuditLogController@{com.codingsy.ems.controller.AuditLogController}!getAllLogs@{getAllLogs}}
+\index{getAllLogs@{getAllLogs}!com.codingsy.ems.controller.AuditLogController@{com.codingsy.ems.controller.AuditLogController}}
+\doxysubsubsection{\texorpdfstring{getAllLogs()}{getAllLogs()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_audit_log_controller_a5fddddc348090607a4382fc0926fe63f} 
+Response\+Entity$<$ Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ $>$ com.\+codingsy.\+ems.\+controller.\+Audit\+Log\+Controller.\+get\+All\+Logs (\begin{DoxyParamCaption}\item[{@Request\+Param(default\+Value="{}0"{}) int}]{page}{, }\item[{@Request\+Param(default\+Value="{}10"{}) int}]{size}{, }\item[{@Request\+Param(default\+Value="{}timestamp"{}) String}]{sort\+By}{, }\item[{@Request\+Param(default\+Value="{}desc"{}) String}]{direction}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves a paginated list of all audit logs. The results can be sorted by a specified field and direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & The page number (default is 0). \\
+\hline
+{\em size} & The number of logs per page (default is 10). \\
+\hline
+{\em sort\+By} & The field to sort by (default is "{}timestamp"{}). \\
+\hline
+{\em direction} & The sorting direction (default is "{}desc"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Response\+Entity containing a page of \doxylink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log} objects. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/codingsy/ems/controller/Audit\+Log\+Controller.\+java\end{DoxyCompactItemize}

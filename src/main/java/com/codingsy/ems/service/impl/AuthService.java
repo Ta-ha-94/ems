@@ -11,17 +11,25 @@ import com.codingsy.ems.exception.UsernameUnavailableException;
 import com.codingsy.ems.mapper.UserMapper;
 import com.codingsy.ems.model.User;
 import com.codingsy.ems.repository.UserRepository;
-
-import lombok.RequiredArgsConstructor;
+import com.codingsy.ems.service.AuditLogService;
 
 @Service
-@RequiredArgsConstructor
 public class AuthService {
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
 	private final AuditLogService auditLogService;
+
 	
-//	Encrypts passwords before saving users.
+	public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder,
+			AuditLogService auditLogService) {
+		this.userRepository = userRepository;
+		this.passwordEncoder = passwordEncoder;
+		this.auditLogService = auditLogService;
+	}
+
+
+
+	//	Encrypts passwords before saving users.
 	public String register(UserDTO userDTO) {
 //		Check if username already exists, if so, then throw the exception.
 		userRepository.findByUsername(userDTO.getUsername())

@@ -1,0 +1,131 @@
+\doxysection{com.\+codingsy.\+ems.\+security.\+Codingsy\+User Class Reference}
+\hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user}{}\label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user}\index{com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}}
+Inheritance diagram for com.\+codingsy.\+ems.\+security.\+Codingsy\+User\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_aaa724e6f95bad7bff2f5fc674b4ce9c8}{Codingsy\+User}} (String username, String password, List$<$ Granted\+Authority $>$ authorities)
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a20b0752839b0b1ddffcae0cd6c310875}{Codingsy\+User}} (String username, String password, boolean enabled, boolean account\+Non\+Expired, boolean credentials\+Non\+Expired, boolean account\+Non\+Locked, List$<$ Granted\+Authority $>$ authorities)
+\item 
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a946a4da441512e792b29d8435c17c907}\label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a946a4da441512e792b29d8435c17c907} 
+Collection$<$? extends Granted\+Authority $>$ {\bfseries get\+Authorities} ()
+\item 
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_aaec23a491551b3fac8c48e4c1f811914}\label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_aaec23a491551b3fac8c48e4c1f811914} 
+String {\bfseries get\+Password} ()
+\item 
+String \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a4f648877b3cb06a3f2422b83f6bba4cc}{get\+Username}} ()
+\item 
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a36bedef6d1ba2c6e91d8e78a5f40016a}\label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a36bedef6d1ba2c6e91d8e78a5f40016a} 
+boolean {\bfseries is\+Account\+Non\+Expired} ()
+\item 
+boolean \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a44994298f1115123248c237dd8913ec6}{is\+Account\+Non\+Locked}} ()
+\item 
+boolean \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a11988ef9fc940486348d78521948cde8}{is\+Credentials\+Non\+Expired}} ()
+\item 
+boolean \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_af45796c3d9745e723ea43c51ee0d8d9d}{is\+Enabled}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_aaa724e6f95bad7bff2f5fc674b4ce9c8}\index{com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}!CodingsyUser@{CodingsyUser}}
+\index{CodingsyUser@{CodingsyUser}!com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}}
+\doxysubsubsection{\texorpdfstring{CodingsyUser()}{CodingsyUser()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_aaa724e6f95bad7bff2f5fc674b4ce9c8} 
+com.\+codingsy.\+ems.\+security.\+Codingsy\+User.\+Codingsy\+User (\begin{DoxyParamCaption}\item[{String}]{username}{, }\item[{String}]{password}{, }\item[{List$<$ Granted\+Authority $>$}]{authorities}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs the {\ttfamily Codingsy\+Users} with the details required by {\ttfamily \doxylink{}{org.\+springframework.\+security.\+authentication.\+dao.\+Dao\+Authentication\+Provider}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the username presented to the {\ttfamily Dao\+Authentication\+Provider} \\
+\hline
+{\em password} & the password that should be presented to the {\ttfamily Dao\+Authentication\+Provider} \\
+\hline
+{\em authorities} & the authorities that should be granted to the caller if they presented the correct username and password and the user is enabled. Not null. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & if a {\ttfamily null} value was passed either as a parameter or as an element in the {\ttfamily Granted\+Authority} collection \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a20b0752839b0b1ddffcae0cd6c310875}\index{com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}!CodingsyUser@{CodingsyUser}}
+\index{CodingsyUser@{CodingsyUser}!com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}}
+\doxysubsubsection{\texorpdfstring{CodingsyUser()}{CodingsyUser()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a20b0752839b0b1ddffcae0cd6c310875} 
+com.\+codingsy.\+ems.\+security.\+Codingsy\+User.\+Codingsy\+User (\begin{DoxyParamCaption}\item[{String}]{username}{, }\item[{String}]{password}{, }\item[{boolean}]{enabled}{, }\item[{boolean}]{account\+Non\+Expired}{, }\item[{boolean}]{credentials\+Non\+Expired}{, }\item[{boolean}]{account\+Non\+Locked}{, }\item[{List$<$ Granted\+Authority $>$}]{authorities}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs the {\ttfamily Codingsy\+Users} with the details required by {\ttfamily \doxylink{}{org.\+springframework.\+security.\+authentication.\+dao.\+Dao\+Authentication\+Provider}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the username presented to the {\ttfamily Dao\+Authentication\+Provider} \\
+\hline
+{\em password} & the password that should be presented to the {\ttfamily Dao\+Authentication\+Provider} \\
+\hline
+{\em enabled} & set to {\ttfamily true} if the user is enabled \\
+\hline
+{\em account\+Non\+Expired} & set to {\ttfamily true} if the account has not expired \\
+\hline
+{\em credentials\+Non\+Expired} & set to {\ttfamily true} if the credentials have not expired \\
+\hline
+{\em account\+Non\+Locked} & set to {\ttfamily true} if the account is not locked \\
+\hline
+{\em authorities} & the authorities that should be granted to the caller if they presented the correct username and password and the user is enabled. Not null. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & if a {\ttfamily null} value was passed either as a parameter or as an element in the {\ttfamily Granted\+Authority} collection \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a4f648877b3cb06a3f2422b83f6bba4cc}\index{com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}!getUsername@{getUsername}}
+\index{getUsername@{getUsername}!com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}}
+\doxysubsubsection{\texorpdfstring{getUsername()}{getUsername()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a4f648877b3cb06a3f2422b83f6bba4cc} 
+String com.\+codingsy.\+ems.\+security.\+Codingsy\+User.\+get\+Username (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Indicates whether the user\textquotesingle{}s account has expired. An expired account cannot be authenticated. \begin{DoxyReturn}{Returns}
+{\ttfamily true} if the user\textquotesingle{}s account is valid (ie non-\/expired), {\ttfamily false} if no longer valid (ie expired) 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a44994298f1115123248c237dd8913ec6}\index{com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}!isAccountNonLocked@{isAccountNonLocked}}
+\index{isAccountNonLocked@{isAccountNonLocked}!com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}}
+\doxysubsubsection{\texorpdfstring{isAccountNonLocked()}{isAccountNonLocked()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a44994298f1115123248c237dd8913ec6} 
+boolean com.\+codingsy.\+ems.\+security.\+Codingsy\+User.\+is\+Account\+Non\+Locked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Indicates whether the user is locked or unlocked. A locked user cannot be authenticated. \begin{DoxyReturn}{Returns}
+{\ttfamily true} if the user is not locked, {\ttfamily false} otherwise 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a11988ef9fc940486348d78521948cde8}\index{com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}!isCredentialsNonExpired@{isCredentialsNonExpired}}
+\index{isCredentialsNonExpired@{isCredentialsNonExpired}!com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}}
+\doxysubsubsection{\texorpdfstring{isCredentialsNonExpired()}{isCredentialsNonExpired()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_a11988ef9fc940486348d78521948cde8} 
+boolean com.\+codingsy.\+ems.\+security.\+Codingsy\+User.\+is\+Credentials\+Non\+Expired (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Indicates whether the user\textquotesingle{}s credentials (password) has expired. Expired credentials prevent authentication. \begin{DoxyReturn}{Returns}
+{\ttfamily true} if the user\textquotesingle{}s credentials are valid (ie non-\/expired), {\ttfamily false} if no longer valid (ie expired) 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_af45796c3d9745e723ea43c51ee0d8d9d}\index{com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}!isEnabled@{isEnabled}}
+\index{isEnabled@{isEnabled}!com.codingsy.ems.security.CodingsyUser@{com.codingsy.ems.security.CodingsyUser}}
+\doxysubsubsection{\texorpdfstring{isEnabled()}{isEnabled()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1_codingsy_user_af45796c3d9745e723ea43c51ee0d8d9d} 
+boolean com.\+codingsy.\+ems.\+security.\+Codingsy\+User.\+is\+Enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Indicates whether the user is enabled or disabled. A disabled user cannot be authenticated. \begin{DoxyReturn}{Returns}
+{\ttfamily true} if the user is enabled, {\ttfamily false} otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/codingsy/ems/security/Codingsy\+User.\+java\end{DoxyCompactItemize}

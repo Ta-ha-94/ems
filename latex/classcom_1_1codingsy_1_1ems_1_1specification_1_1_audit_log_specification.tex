@@ -1,0 +1,103 @@
+\doxysection{com.\+codingsy.\+ems.\+specification.\+Audit\+Log\+Specification Class Reference}
+\hypertarget{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification}{}\label{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification}\index{com.codingsy.ems.specification.AuditLogSpecification@{com.codingsy.ems.specification.AuditLogSpecification}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Specification$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_ab9aaf1dc4d0f1688fad83d8e8cfb6c86}{has\+Usermae}} (String username)
+\item 
+static Specification$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_a3fa194744ce277cd592d752b0fe319d0}{has\+Action}} (String action)
+\item 
+static Specification$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_a4096f002e54cec8fe8c71e7ce9225d0e}{is\+Between\+Time\+Stamps}} (Local\+Date start\+Date, Local\+Date end\+Date)
+\item 
+static Specification$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_a076c168ac50b1bdadf887eac90bcc84a}{is\+On\+Specific\+Date}} (Local\+Date date)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class provides specifications for querying the {\ttfamily \doxylink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} entity. It includes methods for filtering audit logs by username, action, date range, and specific date.
+
+\begin{DoxyAuthor}{Author}
+Taha 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_a3fa194744ce277cd592d752b0fe319d0}\index{com.codingsy.ems.specification.AuditLogSpecification@{com.codingsy.ems.specification.AuditLogSpecification}!hasAction@{hasAction}}
+\index{hasAction@{hasAction}!com.codingsy.ems.specification.AuditLogSpecification@{com.codingsy.ems.specification.AuditLogSpecification}}
+\doxysubsubsection{\texorpdfstring{hasAction()}{hasAction()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_a3fa194744ce277cd592d752b0fe319d0} 
+static Specification$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ com.\+codingsy.\+ems.\+specification.\+Audit\+Log\+Specification.\+has\+Action (\begin{DoxyParamCaption}\item[{String}]{action}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates a specification to filter audit logs by action. The search is case-\/insensitive and supports partial matching.
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The action to filter by. If null, no filtering is applied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{}{Specification}} for filtering by action. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_ab9aaf1dc4d0f1688fad83d8e8cfb6c86}\index{com.codingsy.ems.specification.AuditLogSpecification@{com.codingsy.ems.specification.AuditLogSpecification}!hasUsermae@{hasUsermae}}
+\index{hasUsermae@{hasUsermae}!com.codingsy.ems.specification.AuditLogSpecification@{com.codingsy.ems.specification.AuditLogSpecification}}
+\doxysubsubsection{\texorpdfstring{hasUsermae()}{hasUsermae()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_ab9aaf1dc4d0f1688fad83d8e8cfb6c86} 
+static Specification$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ com.\+codingsy.\+ems.\+specification.\+Audit\+Log\+Specification.\+has\+Usermae (\begin{DoxyParamCaption}\item[{String}]{username}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates a specification to filter audit logs by username. The search is case-\/insensitive and supports partial matching.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username to filter by. If null, no filtering is applied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{}{Specification}} for filtering by username. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_a4096f002e54cec8fe8c71e7ce9225d0e}\index{com.codingsy.ems.specification.AuditLogSpecification@{com.codingsy.ems.specification.AuditLogSpecification}!isBetweenTimeStamps@{isBetweenTimeStamps}}
+\index{isBetweenTimeStamps@{isBetweenTimeStamps}!com.codingsy.ems.specification.AuditLogSpecification@{com.codingsy.ems.specification.AuditLogSpecification}}
+\doxysubsubsection{\texorpdfstring{isBetweenTimeStamps()}{isBetweenTimeStamps()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_a4096f002e54cec8fe8c71e7ce9225d0e} 
+static Specification$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ com.\+codingsy.\+ems.\+specification.\+Audit\+Log\+Specification.\+is\+Between\+Time\+Stamps (\begin{DoxyParamCaption}\item[{Local\+Date}]{start\+Date}{, }\item[{Local\+Date}]{end\+Date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates a specification to filter audit logs by a date range. The range is inclusive of both start and end dates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Date} & The start date of the range. If null, no filtering is applied. \\
+\hline
+{\em end\+Date} & The end date of the range. If null, no filtering is applied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{}{Specification}} for filtering by date range. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & If start\+Date is after end\+Date. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_a076c168ac50b1bdadf887eac90bcc84a}\index{com.codingsy.ems.specification.AuditLogSpecification@{com.codingsy.ems.specification.AuditLogSpecification}!isOnSpecificDate@{isOnSpecificDate}}
+\index{isOnSpecificDate@{isOnSpecificDate}!com.codingsy.ems.specification.AuditLogSpecification@{com.codingsy.ems.specification.AuditLogSpecification}}
+\doxysubsubsection{\texorpdfstring{isOnSpecificDate()}{isOnSpecificDate()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1specification_1_1_audit_log_specification_a076c168ac50b1bdadf887eac90bcc84a} 
+static Specification$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ com.\+codingsy.\+ems.\+specification.\+Audit\+Log\+Specification.\+is\+On\+Specific\+Date (\begin{DoxyParamCaption}\item[{Local\+Date}]{date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates a specification to filter audit logs by a specific date. The search includes the entire day (from 00\+:00\+:00 to 23\+:59\+:59).
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & The specific date to filter by. If null, no filtering is applied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{}{Specification}} for filtering by a specific date. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/codingsy/ems/specification/Audit\+Log\+Specification.\+java\end{DoxyCompactItemize}

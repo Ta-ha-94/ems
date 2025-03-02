@@ -1,0 +1,169 @@
+\doxysection{com.\+codingsy.\+ems.\+controller.\+Employee\+Controller Class Reference}
+\hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller}{}\label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller}\index{com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a4396afa0fbcd95bf9b9d04c7830415ee}{Employee\+Controller}} (\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_employee_service}{Employee\+Service}} employee\+Service)
+\item 
+Response\+Entity$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a6cdab91ac7cae11fce4c2ffb8acdb49e}{create\+Employee}} (@Valid @Request\+Body \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} employee\+DTO)
+\item 
+Response\+Entity$<$ Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a596dcfa1940a0f15e0f494c354583a9b}{get\+All\+Employees}} ( @Request\+Param(default\+Value="{}0"{}) int page, @Request\+Param(default\+Value="{}10"{}) int size, @Request\+Param(default\+Value="{}id"{}) String sort\+By)
+\item 
+Response\+Entity$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_ae7453e27e4960ec7cd82169da7213dd8}{get\+Employee\+By\+Id}} (@Path\+Variable Long id)
+\item 
+Response\+Entity$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a976eea23a4f9cefa261a4260f4c4fd57}{update\+Employee}} (@Path\+Variable Long id, @Valid @Request\+Body \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} employee\+DTO)
+\item 
+Response\+Entity$<$ Map$<$ String, String $>$ $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_af60740e8d3bce35ae178d32555535a1d}{delete\+Employee}} (@Path\+Variable Long id)
+\item 
+Response\+Entity$<$ Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a9f043e5cb7718d16780154e715ed47ff}{filter\+Employee}} ( @Request\+Param(required=false) String name, @Request\+Param(required=false) Double min\+Salary, @Request\+Param(required=false) Double max\+Salary, @Request\+Param(default\+Value="{}0"{}) int page, @Request\+Param(default\+Value="{}5"{}) int size, @Request\+Param(default\+Value="{}id"{}) String sort\+By)
+\item 
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a477b3a43acd1ee06138b4c1bb935b227}\label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a477b3a43acd1ee06138b4c1bb935b227} 
+Response\+Entity$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ {\bfseries restore\+Employee} (@Path\+Variable Long id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is a REST controller for managing employees. It provides endpoints for creating, retrieving, updating, deleting, and filtering employees.
+
+\begin{DoxyAuthor}{Author}
+Taha 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a4396afa0fbcd95bf9b9d04c7830415ee}\index{com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}!EmployeeController@{EmployeeController}}
+\index{EmployeeController@{EmployeeController}!com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}}
+\doxysubsubsection{\texorpdfstring{EmployeeController()}{EmployeeController()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a4396afa0fbcd95bf9b9d04c7830415ee} 
+com.\+codingsy.\+ems.\+controller.\+Employee\+Controller.\+Employee\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_employee_service}{Employee\+Service}}}]{employee\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a new \doxylink{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller}{Employee\+Controller} with the specified \doxylink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_employee_service}{Employee\+Service}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee\+Service} & The service used to perform employee-\/related operations. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a6cdab91ac7cae11fce4c2ffb8acdb49e}\index{com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}!createEmployee@{createEmployee}}
+\index{createEmployee@{createEmployee}!com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}}
+\doxysubsubsection{\texorpdfstring{createEmployee()}{createEmployee()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a6cdab91ac7cae11fce4c2ffb8acdb49e} 
+Response\+Entity$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ com.\+codingsy.\+ems.\+controller.\+Employee\+Controller.\+create\+Employee (\begin{DoxyParamCaption}\item[{@Valid @Request\+Body \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}}}]{employee\+DTO}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates a new employee.
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee\+DTO} & The employee data to be created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Response\+Entity containing the created employee and the location header. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_af60740e8d3bce35ae178d32555535a1d}\index{com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}!deleteEmployee@{deleteEmployee}}
+\index{deleteEmployee@{deleteEmployee}!com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}}
+\doxysubsubsection{\texorpdfstring{deleteEmployee()}{deleteEmployee()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_af60740e8d3bce35ae178d32555535a1d} 
+Response\+Entity$<$ Map$<$ String, String $>$ $>$ com.\+codingsy.\+ems.\+controller.\+Employee\+Controller.\+delete\+Employee (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Deletes an employee by their ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the employee to delete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Response\+Entity with a success message. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a9f043e5cb7718d16780154e715ed47ff}\index{com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}!filterEmployee@{filterEmployee}}
+\index{filterEmployee@{filterEmployee}!com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}}
+\doxysubsubsection{\texorpdfstring{filterEmployee()}{filterEmployee()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a9f043e5cb7718d16780154e715ed47ff} 
+Response\+Entity$<$ Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ $>$ com.\+codingsy.\+ems.\+controller.\+Employee\+Controller.\+filter\+Employee (\begin{DoxyParamCaption}\item[{@Request\+Param(required=false) String}]{name}{, }\item[{@Request\+Param(required=false) Double}]{min\+Salary}{, }\item[{@Request\+Param(required=false) Double}]{max\+Salary}{, }\item[{@Request\+Param(default\+Value="{}0"{}) int}]{page}{, }\item[{@Request\+Param(default\+Value="{}5"{}) int}]{size}{, }\item[{@Request\+Param(default\+Value="{}id"{}) String}]{sort\+By}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Filters employees based on name, salary range, and pagination.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to filter by (optional). \\
+\hline
+{\em min\+Salary} & The minimum salary to filter by (optional). \\
+\hline
+{\em max\+Salary} & The maximum salary to filter by (optional). \\
+\hline
+{\em page} & The page number (default is 0). \\
+\hline
+{\em size} & The number of employees per page (default is 5). \\
+\hline
+{\em sort\+By} & The field to sort by (default is "{}id"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Response\+Entity containing a page of filtered \doxylink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO} objects. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a596dcfa1940a0f15e0f494c354583a9b}\index{com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}!getAllEmployees@{getAllEmployees}}
+\index{getAllEmployees@{getAllEmployees}!com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}}
+\doxysubsubsection{\texorpdfstring{getAllEmployees()}{getAllEmployees()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a596dcfa1940a0f15e0f494c354583a9b} 
+Response\+Entity$<$ Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ $>$ com.\+codingsy.\+ems.\+controller.\+Employee\+Controller.\+get\+All\+Employees (\begin{DoxyParamCaption}\item[{@Request\+Param(default\+Value="{}0"{}) int}]{page}{, }\item[{@Request\+Param(default\+Value="{}10"{}) int}]{size}{, }\item[{@Request\+Param(default\+Value="{}id"{}) String}]{sort\+By}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves a paginated list of all active employees.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & The page number (default is 0). \\
+\hline
+{\em size} & The number of employees per page (default is 10). \\
+\hline
+{\em sort\+By} & The field to sort by (default is "{}id"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Response\+Entity containing a page of \doxylink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO} objects. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_ae7453e27e4960ec7cd82169da7213dd8}\index{com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}!getEmployeeById@{getEmployeeById}}
+\index{getEmployeeById@{getEmployeeById}!com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}}
+\doxysubsubsection{\texorpdfstring{getEmployeeById()}{getEmployeeById()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_ae7453e27e4960ec7cd82169da7213dd8} 
+Response\+Entity$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ com.\+codingsy.\+ems.\+controller.\+Employee\+Controller.\+get\+Employee\+By\+Id (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves an employee by their ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the employee to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Response\+Entity containing the \doxylink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO} object. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a976eea23a4f9cefa261a4260f4c4fd57}\index{com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}!updateEmployee@{updateEmployee}}
+\index{updateEmployee@{updateEmployee}!com.codingsy.ems.controller.EmployeeController@{com.codingsy.ems.controller.EmployeeController}}
+\doxysubsubsection{\texorpdfstring{updateEmployee()}{updateEmployee()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1controller_1_1_employee_controller_a976eea23a4f9cefa261a4260f4c4fd57} 
+Response\+Entity$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ com.\+codingsy.\+ems.\+controller.\+Employee\+Controller.\+update\+Employee (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id}{, }\item[{@Valid @Request\+Body \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}}}]{employee\+DTO}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Updates an existing employee.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the employee to update. \\
+\hline
+{\em employee\+DTO} & The updated employee data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Response\+Entity containing the updated \doxylink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO} object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/codingsy/ems/controller/Employee\+Controller.\+java\end{DoxyCompactItemize}

@@ -19,6 +19,7 @@ public class AuthorizeHttpRequestsConfigCustomizer implements DefaultCustomizer<
 	        t.requestMatchers(HttpMethod.POST, "/employees").hasRole("ADMIN"); // POST requests
 	        t.requestMatchers(HttpMethod.PUT, "/employees").hasRole("ADMIN"); // PUT requests
 	        t.requestMatchers(HttpMethod.DELETE, "/employees").hasRole("ADMIN"); // DELETE requests
+	        t.requestMatchers(HttpMethod.GET, "/audit/logs").hasRole("ADMIN");
             t.anyRequest().authenticated(); // Protect other APIs
 	};
 }

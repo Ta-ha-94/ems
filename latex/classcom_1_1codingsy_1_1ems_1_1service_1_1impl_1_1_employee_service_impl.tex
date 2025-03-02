@@ -1,0 +1,252 @@
+\doxysection{com.\+codingsy.\+ems.\+service.\+impl.\+Employee\+Service\+Impl Class Reference}
+\hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl}{}\label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl}\index{com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}}
+Inheritance diagram for com.\+codingsy.\+ems.\+service.\+impl.\+Employee\+Service\+Impl\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a0fd5eec7c2b44526ac183325a86d9085}{Employee\+Service\+Impl}} (\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1repository_1_1_employee_repository}{Employee\+Repository}} employee\+Repository, \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_email_service}{Email\+Service}} mail\+Service, \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_audit_log_service}{Audit\+Log\+Service}} audit\+Log\+Service)
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a4a20133dc05550a2af13ebd39b120c80}{save\+Employee}} (@Valid \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} employee\+DTO)
+\item 
+Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a44df7c34359e4a505f8ba0a9b866b796}{get\+All\+Employees}} (int page, int size, String sort\+By)
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a6f8f2493fcb7fcf27a622f0bfcb8c8d7}{get\+Employee\+By\+Id}} (Long id)
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_af6c692c6715d622c87a877fc6d80fcf9}{update\+Employee}} (Long id, @Valid \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} employee\+DTO)
+\item 
+void \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a161db2888c0e48a8625d98e206e7333b}{delete\+Employee}} (Long id)
+\item 
+Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_aa83feebf4b65db793d7644a55e92f9f7}{filter\+Employee}} (String name, Double min\+Salary, Double max\+Salary, Pageable pageable)
+\item 
+Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a7ecc19e0e5feaf7e04cd9df59b9ad308}{get\+All\+Active\+Employees}} (int page, int size, String sort\+By)
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_ae941910d7a3da5c5fcf06420afbfa63f}{restore\+Employee}} (Long id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_employee_service}{com.\+codingsy.\+ems.\+service.\+Employee\+Service}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} {\bfseries save\+Employee} (\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} employee\+DTO)
+\item 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} {\bfseries update\+Employee} (Long id, \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} employee\+DTO)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service implementation for managing employee-\/related operations. This class provides methods for saving, retrieving, updating, and deleting employees, as well as filtering and restoring deactivated employees. It integrates with {\ttfamily \doxylink{interfacecom_1_1codingsy_1_1ems_1_1repository_1_1_employee_repository}{Employee\+Repository}}, {\ttfamily \doxylink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_email_service}{Email\+Service}}, and {\ttfamily \doxylink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_audit_log_service}{Audit\+Log\+Service}} to perform database operations, send emails, and log actions for auditing purposes.
+
+\begin{DoxyAuthor}{Author}
+Taha 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a0fd5eec7c2b44526ac183325a86d9085}\index{com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}!EmployeeServiceImpl@{EmployeeServiceImpl}}
+\index{EmployeeServiceImpl@{EmployeeServiceImpl}!com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}}
+\doxysubsubsection{\texorpdfstring{EmployeeServiceImpl()}{EmployeeServiceImpl()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a0fd5eec7c2b44526ac183325a86d9085} 
+com.\+codingsy.\+ems.\+service.\+impl.\+Employee\+Service\+Impl.\+Employee\+Service\+Impl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1repository_1_1_employee_repository}{Employee\+Repository}}}]{employee\+Repository}{, }\item[{\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_email_service}{Email\+Service}}}]{mail\+Service}{, }\item[{\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_audit_log_service}{Audit\+Log\+Service}}}]{audit\+Log\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a new {\ttfamily Employee\+Service\+Impl} with the required dependencies.
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee\+Repository} & the repository for employee data access. \\
+\hline
+{\em mail\+Service} & the service for sending emails. \\
+\hline
+{\em audit\+Log\+Service} & the service for logging audit actions. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a161db2888c0e48a8625d98e206e7333b}\index{com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}!deleteEmployee@{deleteEmployee}}
+\index{deleteEmployee@{deleteEmployee}!com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}}
+\doxysubsubsection{\texorpdfstring{deleteEmployee()}{deleteEmployee()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a161db2888c0e48a8625d98e206e7333b} 
+void com.\+codingsy.\+ems.\+service.\+impl.\+Employee\+Service\+Impl.\+delete\+Employee (\begin{DoxyParamCaption}\item[{Long}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Deactivates an employee (soft delete). Only users with the \textquotesingle{}ADMIN\textquotesingle{} role can access this method. This method also logs the action in the audit table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the ID of the employee to deactivate. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_employee_service}{com.\+codingsy.\+ems.\+service.\+Employee\+Service}}.
+
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_aa83feebf4b65db793d7644a55e92f9f7}\index{com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}!filterEmployee@{filterEmployee}}
+\index{filterEmployee@{filterEmployee}!com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}}
+\doxysubsubsection{\texorpdfstring{filterEmployee()}{filterEmployee()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_aa83feebf4b65db793d7644a55e92f9f7} 
+Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ com.\+codingsy.\+ems.\+service.\+impl.\+Employee\+Service\+Impl.\+filter\+Employee (\begin{DoxyParamCaption}\item[{String}]{name}{, }\item[{Double}]{min\+Salary}{, }\item[{Double}]{max\+Salary}{, }\item[{Pageable}]{pageable}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Filters employees based on name, minimum salary, and maximum salary. Users with either \textquotesingle{}ADMIN\textquotesingle{} or \textquotesingle{}EMPLOYEE\textquotesingle{} roles can access this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name to filter by (optional). \\
+\hline
+{\em min\+Salary} & the minimum salary to filter by (optional). \\
+\hline
+{\em max\+Salary} & the maximum salary to filter by (optional). \\
+\hline
+{\em pageable} & the pagination and sorting information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a {\ttfamily \doxylink{}{Page}} of {\ttfamily \doxylink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} containing the filtered employee data. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_employee_service}{com.\+codingsy.\+ems.\+service.\+Employee\+Service}}.
+
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a7ecc19e0e5feaf7e04cd9df59b9ad308}\index{com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}!getAllActiveEmployees@{getAllActiveEmployees}}
+\index{getAllActiveEmployees@{getAllActiveEmployees}!com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}}
+\doxysubsubsection{\texorpdfstring{getAllActiveEmployees()}{getAllActiveEmployees()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a7ecc19e0e5feaf7e04cd9df59b9ad308} 
+Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ com.\+codingsy.\+ems.\+service.\+impl.\+Employee\+Service\+Impl.\+get\+All\+Active\+Employees (\begin{DoxyParamCaption}\item[{int}]{page}{, }\item[{int}]{size}{, }\item[{String}]{sort\+By}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves a paginated list of all active employees. Users with either \textquotesingle{}ADMIN\textquotesingle{} or \textquotesingle{}EMPLOYEE\textquotesingle{} roles can access this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & the page number (zero-\/based). \\
+\hline
+{\em size} & the number of items per page. \\
+\hline
+{\em sort\+By} & the field to sort the results by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a {\ttfamily \doxylink{}{Page}} of {\ttfamily \doxylink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} containing the paginated and sorted active employee data. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_employee_service}{com.\+codingsy.\+ems.\+service.\+Employee\+Service}}.
+
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a44df7c34359e4a505f8ba0a9b866b796}\index{com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}!getAllEmployees@{getAllEmployees}}
+\index{getAllEmployees@{getAllEmployees}!com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}}
+\doxysubsubsection{\texorpdfstring{getAllEmployees()}{getAllEmployees()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a44df7c34359e4a505f8ba0a9b866b796} 
+Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} $>$ com.\+codingsy.\+ems.\+service.\+impl.\+Employee\+Service\+Impl.\+get\+All\+Employees (\begin{DoxyParamCaption}\item[{int}]{page}{, }\item[{int}]{size}{, }\item[{String}]{sort\+By}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves a paginated list of all employees. Users with either \textquotesingle{}ADMIN\textquotesingle{} or \textquotesingle{}EMPLOYEE\textquotesingle{} roles can access this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & the page number (zero-\/based). \\
+\hline
+{\em size} & the number of items per page. \\
+\hline
+{\em sort\+By} & the field to sort the results by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a {\ttfamily \doxylink{}{Page}} of {\ttfamily \doxylink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} containing the paginated and sorted employee data. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_employee_service}{com.\+codingsy.\+ems.\+service.\+Employee\+Service}}.
+
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a6f8f2493fcb7fcf27a622f0bfcb8c8d7}\index{com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}!getEmployeeById@{getEmployeeById}}
+\index{getEmployeeById@{getEmployeeById}!com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}}
+\doxysubsubsection{\texorpdfstring{getEmployeeById()}{getEmployeeById()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a6f8f2493fcb7fcf27a622f0bfcb8c8d7} 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} com.\+codingsy.\+ems.\+service.\+impl.\+Employee\+Service\+Impl.\+get\+Employee\+By\+Id (\begin{DoxyParamCaption}\item[{Long}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves an employee by their ID. Users with either \textquotesingle{}ADMIN\textquotesingle{} or \textquotesingle{}EMPLOYEE\textquotesingle{} roles can access this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the ID of the employee to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the employee as a {\ttfamily \doxylink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classcom_1_1codingsy_1_1ems_1_1exception_1_1_resource_not_found_exception}{Resource\+Not\+Found\+Exception}} & if no active employee is found with the given ID. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_employee_service}{com.\+codingsy.\+ems.\+service.\+Employee\+Service}}.
+
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_ae941910d7a3da5c5fcf06420afbfa63f}\index{com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}!restoreEmployee@{restoreEmployee}}
+\index{restoreEmployee@{restoreEmployee}!com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}}
+\doxysubsubsection{\texorpdfstring{restoreEmployee()}{restoreEmployee()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_ae941910d7a3da5c5fcf06420afbfa63f} 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} com.\+codingsy.\+ems.\+service.\+impl.\+Employee\+Service\+Impl.\+restore\+Employee (\begin{DoxyParamCaption}\item[{Long}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Restores a deactivated employee by setting their active status to true. Only users with the \textquotesingle{}ADMIN\textquotesingle{} role can access this method. This method also logs the action in the audit table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the ID of the employee to restore. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the restored employee as a {\ttfamily \doxylink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classcom_1_1codingsy_1_1ems_1_1exception_1_1_resource_not_found_exception}{Resource\+Not\+Found\+Exception}} & if no employee is found with the given ID. \\
+\hline
+{\em Illegal\+State\+Exception} & if the employee is already active. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_employee_service}{com.\+codingsy.\+ems.\+service.\+Employee\+Service}}.
+
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a4a20133dc05550a2af13ebd39b120c80}\index{com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}!saveEmployee@{saveEmployee}}
+\index{saveEmployee@{saveEmployee}!com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}}
+\doxysubsubsection{\texorpdfstring{saveEmployee()}{saveEmployee()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_a4a20133dc05550a2af13ebd39b120c80} 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} com.\+codingsy.\+ems.\+service.\+impl.\+Employee\+Service\+Impl.\+save\+Employee (\begin{DoxyParamCaption}\item[{@Valid \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}}}]{employee\+DTO}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Saves a new employee to the database. Only users with the \textquotesingle{}ADMIN\textquotesingle{} role can access this method. This method also logs the action and sends a welcome email to the employee.
+
+
+\begin{DoxyParams}{Parameters}
+{\em employee\+DTO} & the employee data to be saved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the saved employee as a {\ttfamily \doxylink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}}. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_af6c692c6715d622c87a877fc6d80fcf9}\index{com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}!updateEmployee@{updateEmployee}}
+\index{updateEmployee@{updateEmployee}!com.codingsy.ems.service.impl.EmployeeServiceImpl@{com.codingsy.ems.service.impl.EmployeeServiceImpl}}
+\doxysubsubsection{\texorpdfstring{updateEmployee()}{updateEmployee()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_employee_service_impl_af6c692c6715d622c87a877fc6d80fcf9} 
+\mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}} com.\+codingsy.\+ems.\+service.\+impl.\+Employee\+Service\+Impl.\+update\+Employee (\begin{DoxyParamCaption}\item[{Long}]{id}{, }\item[{@Valid \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}}}]{employee\+DTO}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Updates an existing employee\textquotesingle{}s details. Only users with the \textquotesingle{}ADMIN\textquotesingle{} role can access this method. This method also logs the action in the audit table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the ID of the employee to update. \\
+\hline
+{\em employee\+DTO} & the updated employee data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the updated employee as a {\ttfamily \doxylink{classcom_1_1codingsy_1_1ems_1_1dto_1_1_employee_d_t_o}{Employee\+DTO}}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/codingsy/ems/service/impl/Employee\+Service\+Impl.\+java\end{DoxyCompactItemize}

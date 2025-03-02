@@ -1,0 +1,58 @@
+\doxysection{com.\+codingsy.\+ems.\+service.\+impl.\+Audit\+Log\+Service\+Impl Class Reference}
+\hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl}{}\label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl}\index{com.codingsy.ems.service.impl.AuditLogServiceImpl@{com.codingsy.ems.service.impl.AuditLogServiceImpl}}
+Inheritance diagram for com.\+codingsy.\+ems.\+service.\+impl.\+Audit\+Log\+Service\+Impl\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl_a07a2e62f32e69f15fa1c4bec85fb92fa}\label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl_a07a2e62f32e69f15fa1c4bec85fb92fa} 
+{\bfseries Audit\+Log\+Service\+Impl} (\mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1repository_1_1_audit_log_repository}{Audit\+Log\+Repository}} audit\+Log\+Repository)
+\item 
+void \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl_ac0a1972710be8e7e221733c5a9974c0f}{log\+Action}} (String username, String action, String details)
+\item 
+Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl_a116fb4a49a4780936c029eb788ab9c28}{get\+Logs}} (int page, int size, String sort\+By, String direction)
+\item 
+Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl_ad041085fff8b2b0ec709b7305eb39862}{get\+Logs}} (int page, int size, String sort\+By, String direction, String username, String action, Local\+Date start\+Date, Local\+Date end\+Date, Local\+Date date)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl_a116fb4a49a4780936c029eb788ab9c28}\index{com.codingsy.ems.service.impl.AuditLogServiceImpl@{com.codingsy.ems.service.impl.AuditLogServiceImpl}!getLogs@{getLogs}}
+\index{getLogs@{getLogs}!com.codingsy.ems.service.impl.AuditLogServiceImpl@{com.codingsy.ems.service.impl.AuditLogServiceImpl}}
+\doxysubsubsection{\texorpdfstring{getLogs()}{getLogs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl_a116fb4a49a4780936c029eb788ab9c28} 
+Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ com.\+codingsy.\+ems.\+service.\+impl.\+Audit\+Log\+Service\+Impl.\+get\+Logs (\begin{DoxyParamCaption}\item[{int}]{page}{, }\item[{int}]{size}{, }\item[{String}]{sort\+By}{, }\item[{String}]{direction}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_audit_log_service}{com.\+codingsy.\+ems.\+service.\+Audit\+Log\+Service}}.
+
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl_ad041085fff8b2b0ec709b7305eb39862}\index{com.codingsy.ems.service.impl.AuditLogServiceImpl@{com.codingsy.ems.service.impl.AuditLogServiceImpl}!getLogs@{getLogs}}
+\index{getLogs@{getLogs}!com.codingsy.ems.service.impl.AuditLogServiceImpl@{com.codingsy.ems.service.impl.AuditLogServiceImpl}}
+\doxysubsubsection{\texorpdfstring{getLogs()}{getLogs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl_ad041085fff8b2b0ec709b7305eb39862} 
+Page$<$ \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1model_1_1_audit_log}{Audit\+Log}} $>$ com.\+codingsy.\+ems.\+service.\+impl.\+Audit\+Log\+Service\+Impl.\+get\+Logs (\begin{DoxyParamCaption}\item[{int}]{page}{, }\item[{int}]{size}{, }\item[{String}]{sort\+By}{, }\item[{String}]{direction}{, }\item[{String}]{username}{, }\item[{String}]{action}{, }\item[{Local\+Date}]{start\+Date}{, }\item[{Local\+Date}]{end\+Date}{, }\item[{Local\+Date}]{date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_audit_log_service}{com.\+codingsy.\+ems.\+service.\+Audit\+Log\+Service}}.
+
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl_ac0a1972710be8e7e221733c5a9974c0f}\index{com.codingsy.ems.service.impl.AuditLogServiceImpl@{com.codingsy.ems.service.impl.AuditLogServiceImpl}!logAction@{logAction}}
+\index{logAction@{logAction}!com.codingsy.ems.service.impl.AuditLogServiceImpl@{com.codingsy.ems.service.impl.AuditLogServiceImpl}}
+\doxysubsubsection{\texorpdfstring{logAction()}{logAction()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1service_1_1impl_1_1_audit_log_service_impl_ac0a1972710be8e7e221733c5a9974c0f} 
+void com.\+codingsy.\+ems.\+service.\+impl.\+Audit\+Log\+Service\+Impl.\+log\+Action (\begin{DoxyParamCaption}\item[{String}]{username}{, }\item[{String}]{action}{, }\item[{String}]{details}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1codingsy_1_1ems_1_1service_1_1_audit_log_service}{com.\+codingsy.\+ems.\+service.\+Audit\+Log\+Service}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/codingsy/ems/service/impl/Audit\+Log\+Service\+Impl.\+java\end{DoxyCompactItemize}

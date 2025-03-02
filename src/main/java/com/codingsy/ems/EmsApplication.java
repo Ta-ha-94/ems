@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 //@EntityScan(value = "com.codingsy.ems.model") //Use when model classes are not defined inside the base-package (main application class)
 //@EnableJpaRepositories(value = "com.codingsy.ems.repositoru") //Use when JPS repositories are not defined inside the base-package (main application class)
 @EnableWebSecurity //Use to enable the spring security feature inside a Spring application. SpringBoot is smart enough to enable this configuration based on the dependencies in pom.xml
-@EnableAsync
+@EnableAsync	//Using this to send mail upon successful employee creation asynchronously. 
 public class EmsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EmsApplication.class, args);

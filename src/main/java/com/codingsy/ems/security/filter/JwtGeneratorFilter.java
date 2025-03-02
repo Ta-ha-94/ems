@@ -27,6 +27,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Filter responsible for generating JWT tokens after successful authentication.
+ * 
+ * @author Taha
+ * @version 1.o
  */
 public class JwtGeneratorFilter extends OncePerRequestFilter {
 	

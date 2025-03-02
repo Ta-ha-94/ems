@@ -1,0 +1,71 @@
+\doxysection{com.\+codingsy.\+ems.\+security.\+filter.\+Jwt\+Validation\+Filter Class Reference}
+\hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1filter_1_1_jwt_validation_filter}{}\label{classcom_1_1codingsy_1_1ems_1_1security_1_1filter_1_1_jwt_validation_filter}\index{com.codingsy.ems.security.filter.JwtValidationFilter@{com.codingsy.ems.security.filter.JwtValidationFilter}}
+Inheritance diagram for com.\+codingsy.\+ems.\+security.\+filter.\+Jwt\+Validation\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1codingsy_1_1ems_1_1security_1_1filter_1_1_jwt_validation_filter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1filter_1_1_jwt_validation_filter_a49ccdbade1bf87de689a78ff3704030f}{do\+Filter\+Internal}} (Http\+Servlet\+Request request, Http\+Servlet\+Response response, Filter\+Chain filter\+Chain)  throws Servlet\+Exception, IOException 
+\item 
+boolean \mbox{\hyperlink{classcom_1_1codingsy_1_1ems_1_1security_1_1filter_1_1_jwt_validation_filter_a081d3f7be8a5bb36903354b4321086f1}{should\+Not\+Filter}} (Http\+Servlet\+Request request)  throws Servlet\+Exception 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Filter responsible for validating JWT tokens in the request header. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1filter_1_1_jwt_validation_filter_a49ccdbade1bf87de689a78ff3704030f}\index{com.codingsy.ems.security.filter.JwtValidationFilter@{com.codingsy.ems.security.filter.JwtValidationFilter}!doFilterInternal@{doFilterInternal}}
+\index{doFilterInternal@{doFilterInternal}!com.codingsy.ems.security.filter.JwtValidationFilter@{com.codingsy.ems.security.filter.JwtValidationFilter}}
+\doxysubsubsection{\texorpdfstring{doFilterInternal()}{doFilterInternal()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1filter_1_1_jwt_validation_filter_a49ccdbade1bf87de689a78ff3704030f} 
+void com.\+codingsy.\+ems.\+security.\+filter.\+Jwt\+Validation\+Filter.\+do\+Filter\+Internal (\begin{DoxyParamCaption}\item[{Http\+Servlet\+Request}]{request}{, }\item[{Http\+Servlet\+Response}]{response}{, }\item[{Filter\+Chain}]{filter\+Chain}{}\end{DoxyParamCaption}) throws Servlet\+Exception, IOException\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Validates the JWT token in the request header and sets the authentication context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The HTTP request. \\
+\hline
+{\em response} & The HTTP response. \\
+\hline
+{\em filter\+Chain} & The filter chain. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Servlet\+Exception} & If a servlet-\/related exception occurs. \\
+\hline
+{\em IOException} & If an I/O exception occurs. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1codingsy_1_1ems_1_1security_1_1filter_1_1_jwt_validation_filter_a081d3f7be8a5bb36903354b4321086f1}\index{com.codingsy.ems.security.filter.JwtValidationFilter@{com.codingsy.ems.security.filter.JwtValidationFilter}!shouldNotFilter@{shouldNotFilter}}
+\index{shouldNotFilter@{shouldNotFilter}!com.codingsy.ems.security.filter.JwtValidationFilter@{com.codingsy.ems.security.filter.JwtValidationFilter}}
+\doxysubsubsection{\texorpdfstring{shouldNotFilter()}{shouldNotFilter()}}
+{\footnotesize\ttfamily \label{classcom_1_1codingsy_1_1ems_1_1security_1_1filter_1_1_jwt_validation_filter_a081d3f7be8a5bb36903354b4321086f1} 
+boolean com.\+codingsy.\+ems.\+security.\+filter.\+Jwt\+Validation\+Filter.\+should\+Not\+Filter (\begin{DoxyParamCaption}\item[{Http\+Servlet\+Request}]{request}{}\end{DoxyParamCaption}) throws Servlet\+Exception\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Determines whether the filter should be skipped for the given request.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The HTTP request. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the filter should be skipped, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Servlet\+Exception} & If a servlet-\/related exception occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/codingsy/ems/security/filter/Jwt\+Validation\+Filter.\+java\end{DoxyCompactItemize}

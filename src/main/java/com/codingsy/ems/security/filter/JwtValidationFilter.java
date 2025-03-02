@@ -128,6 +128,6 @@ public class JwtValidationFilter extends OncePerRequestFilter {
      * @throws ServletException If a servlet-related exception occurs.
      */
 	protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-		return request.getServletPath().equals("/auth/login");
+		return request.getServletPath().equals("/auth/login") || request.getServletPath().equals("/auth/register");
 	}
 }
